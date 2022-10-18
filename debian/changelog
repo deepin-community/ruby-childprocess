@@ -1,0 +1,186 @@
+ruby-childprocess (4.1.0-1) unstable; urgency=medium
+
+  * Team upload
+
+  * New upstream version 4.1.0
+  * debian/control
+    - Set Standards-Version: 4.5.1
+    - Bump to debhelper-compat (= 13)
+  * debian/copyright
+    - Update Source: filed
+
+ -- Hideki Yamane <henrich@debian.org>  Sat, 12 Jun 2021 13:13:00 +0900
+
+ruby-childprocess (4.0.0-1) unstable; urgency=medium
+
+  * Team upload
+
+  * New upstream version 4.0.0
+  * debian/control
+    - Set Standards-Version: 4.5.0
+
+  * Use secure copyright file specification URI.
+  * Use secure URI in Homepage field.
+  * Set upstream metadata fields: Bug-Database, Bug-Submit, Repository,
+    Repository-Browse.
+
+ -- Hideki Yamane <henrich@debian.org>  Mon, 29 Jun 2020 23:00:06 +0900
+
+ruby-childprocess (3.0.0-1) unstable; urgency=medium
+
+  * Team upload
+  * New upstream version 3.0.0
+  * debian/control
+    - adjust Build-Dependencies, drop debhelper, debhelper-compat is enough
+    - drop Depends: ruby-interpriter
+  * debian/patches
+    - drop 0002-do-not-search-ext-dir-and-build-it.patch: merged upstream
+
+ -- Hideki Yamane <henrich@debian.org>  Tue, 24 Sep 2019 18:32:25 +0900
+
+ruby-childprocess (2.0.0-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Hideki Yamane ]
+  * New upstream version 2.0.0
+  * debian/control
+    - set Standards-Version: 4.4.0
+    - set debhelper-compat level 12
+    - adjust dependency
+    - add Rules-Requires-Root: no
+    - add Build-Depends: locales-all to avoid test failure on certain
+      locale-less minimum environments
+  * debian/patches
+    - refresh patch
+    - add 0002-do-not-search-ext-dir-and-build-it.patch to avoid install
+      architecture dependent empty directories.
+    - add 0003-wait-30-sec-until-process-dies.patch to avoid test failure
+      on CI
+  * debian/salsa-ci.yml
+    - disable some unnecessary tests
+
+  [ Utkarsh Gupta ]
+  * Add salsa-ci.yml
+
+ -- Hideki Yamane <henrich@debian.org>  Mon, 19 Aug 2019 00:49:01 +0900
+
+ruby-childprocess (0.9.0-1) unstable; urgency=medium
+
+  * Team upload
+
+  * New upstream release
+  * debian/watch
+    - use gemwatch.debian.net
+  * debian/control
+    - update Vcs-*
+    - set Standards-Version to 4.2.1
+    - use "debhelper-compat (= 11) and drop debian/compat file
+    - adjust Dependency from gemspec
+  * debian/patches
+    - add 0001-do-not-use-git-in-gemspec.patch to fix test failure with
+      git command
+
+ -- Hideki Yamane <henrich@debian.org>  Sun, 16 Dec 2018 17:42:08 +0900
+
+ruby-childprocess (0.5.9-1) unstable; urgency=medium
+
+  * Imported Upstream version 0.5.9
+    + Fixes processes running beyond package build (Closes: #747847)
+      Thanks Stefano Rivera
+  * Use https:// in Vcs-* fields
+  * Bump Standards-Version to 3.9.7 (no changes needed)
+  * Run wrap-and-sort on packaging files
+
+ -- Cédric Boutillier <boutil@debian.org>  Sat, 05 Mar 2016 22:10:39 +0100
+
+ruby-childprocess (0.5.8-1) unstable; urgency=medium
+
+  * Team upload
+
+  [ Laurent Bigonville ]
+  * Remove myself from the uploaders
+
+  [ Antonio Terceiro ]
+  * New upstream release
+  * Update packaging with a new dh-make-ruby run
+
+ -- Antonio Terceiro <terceiro@debian.org>  Tue, 15 Dec 2015 10:34:31 -0200
+
+ruby-childprocess (0.5.5-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Antonio Terceiro <terceiro@debian.org>  Sat, 11 Oct 2014 19:59:54 -0300
+
+ruby-childprocess (0.5.2-1) unstable; urgency=low
+
+  * Team upload
+  * New upstream release (0.5.2)
+
+ -- Sebastien Badia <seb@sebian.fr>  Wed, 16 Apr 2014 18:45:29 +0200
+
+ruby-childprocess (0.5.1-1) unstable; urgency=low
+
+  * Team upload
+  * New upstream release (0.5.1)
+  * d/control: Wrap and sort control file
+  * d/control: Bump Standards-Version to 3.9.5 (no changes)
+  * Add coveralls build dependency and enable pid_behavior test
+
+ -- Sebastien Badia <seb@sebian.fr>  Tue, 18 Mar 2014 18:56:18 +0100
+
+ruby-childprocess (0.3.9-2) unstable; urgency=low
+
+  * Upload to unstable
+  * debian/control: Bump ruby-ffi dependency
+
+ -- Laurent Bigonville <bigon@debian.org>  Tue, 14 May 2013 14:56:57 +0200
+
+ruby-childprocess (0.3.9-1) experimental; urgency=low
+
+  * Team upload
+  * New upstream release
+  * Update to 3.9.4
+    - Remove DM-Upload-Allowed
+  * Update vcs fileds to new url
+  * Add more lines to extended description
+  * Override missing upstream changelog
+
+ -- Praveen Arimbrathodiyil <praveen@debian.org>  Thu, 02 May 2013 20:57:36 +0530
+
+ruby-childprocess (0.3.3-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Cédric Boutillier <cedric.boutillier@gmail.com>  Fri, 29 Jun 2012 05:06:27 +0200
+
+ruby-childprocess (0.3.2-2) unstable; urgency=low
+
+  * Bump build dependency on gem2deb to >= 0.3.0~
+  * Set DM-Upload-Allowed: to yes
+
+ -- Cédric Boutillier <cedric.boutillier@gmail.com>  Tue, 26 Jun 2012 07:55:40 +0200
+
+ruby-childprocess (0.3.2-1) unstable; urgency=low
+
+  * New upstream version
+  * Avoid loading twice shared examples in tests (Closes: #665262)
+  * require rspec/autorun to ensure tests are indeed run
+  * Bump Standards-Version to 3.9.3 (no changes needed)
+  * Add myself to Uploaders:
+  * Update DEP-5 Format URL in debian/copyright
+
+ -- Cédric Boutillier <cedric.boutillier@gmail.com>  Thu, 03 May 2012 00:33:18 +0200
+
+ruby-childprocess (0.3.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Laurent Bigonville <bigon@debian.org>  Mon, 13 Feb 2012 12:13:21 +0100
+
+ruby-childprocess (0.3.0-1) unstable; urgency=low
+
+  * Initial release (Closes: #657020)
+
+ -- Laurent Bigonville <bigon@debian.org>  Wed, 25 Jan 2012 12:09:49 +0100

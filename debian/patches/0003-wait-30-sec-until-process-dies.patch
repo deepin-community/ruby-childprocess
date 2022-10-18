@@ -1,0 +1,21 @@
+From: Hideki Yamane <henrich@debian.org>
+Date: Mon, 19 Aug 2019 01:17:27 +0900
+Subject: wait 30 sec until process dies
+
+---
+ spec/childprocess_spec.rb | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/spec/childprocess_spec.rb b/spec/childprocess_spec.rb
+index 89bb235..f4fb081 100644
+--- a/spec/childprocess_spec.rb
++++ b/spec/childprocess_spec.rb
+@@ -288,7 +288,7 @@ describe ChildProcess do
+       end
+ 
+       process.stop
+-      wait_until(3) { expect(alive?(pid)).to eql(false) }
++      wait_until(30) { expect(alive?(pid)).to eql(false) }
+     end
+   end
+ 
